@@ -1,10 +1,17 @@
 import React from 'react';
+import styled from 'styled-components';
+import BasicInput from './components/BasicInput';
+import CalculatorButtons from './components/CalculatorButtons';
+
+const Container = styled.div`
+`;
 
 function App() {
   return (
-    <div className="App">
-      hello!
-    </div>
+    <Container>
+      <BasicInput />
+      <CalculatorButtons />
+    </Container>
   );
 }
 
