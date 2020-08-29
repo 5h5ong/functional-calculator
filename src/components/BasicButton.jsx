@@ -8,6 +8,9 @@ const Button = styled.button`
   border-right: 1px solid black;
   padding: 2rem;
   outline: none;
+  &:hover {
+    background-color: #C4C4C4;
+  }
   /* box-shadow: 10px -10px 4rem 2px lightgray; */
 `;
 
