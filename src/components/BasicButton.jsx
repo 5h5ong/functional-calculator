@@ -1,17 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Button = styled.button`
-  background-color: #dfdfdf;
+export const DefaultButtonStyle = styled.button`
   border: none;
-  border-bottom: 1px solid black;
-  border-right: 1px solid black;
   padding: 2rem;
   outline: none;
+`;
+
+const Button = styled(DefaultButtonStyle)`
+  background-color: #dfdfdf;
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
   &:hover {
     background-color: #C4C4C4;
   }
-  /* box-shadow: 10px -10px 4rem 2px lightgray; */
 `;
 
 const BasicButton = ({ children }) => (

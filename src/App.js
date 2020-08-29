@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import BasicInput from './components/BasicInput';
 import CalculatorButtons from './components/CalculatorButtons';
@@ -10,9 +10,11 @@ const Container = styled.div`
 `;
 
 function App() {
+  const [outcome, setOutcome] = useState(0);
+
   return (
     <Container>
-      <BasicInput />
+      <BasicInput outcome={outcome} />
       <CalculatorButtons />
     </Container>
   );

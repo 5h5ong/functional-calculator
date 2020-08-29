@@ -9,8 +9,8 @@ const Input = styled.input`
     width: 100%;
 `;
 
-const BasicInput = () => (
-  <Input />
+const BasicInput = ({ outcome }) => (
+  <Input value={outcome} />
 );
 
 export default BasicInput;
