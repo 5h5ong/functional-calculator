@@ -5,11 +5,13 @@ import BasicButton from './BasicButton';
 const Wrapper = styled.div`
   display: grid; 
   height: 100%;
+  width: 100%;
   grid-template-columns: repeat(3, 1fr);
 `;
 
 const CalculatorButtons = () => (
   <Wrapper>
+    <BasicButton>0</BasicButton>
     <BasicButton>1</BasicButton>
     <BasicButton>2</BasicButton>
     <BasicButton>3</BasicButton>

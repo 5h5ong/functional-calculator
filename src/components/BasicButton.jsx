@@ -9,11 +9,10 @@ export const DefaultButtonStyle = styled.button`
 
 const Button = styled(DefaultButtonStyle)`
   background-color: #dfdfdf;
-  border-bottom: 1px solid black;
-  border-right: 1px solid black;
   &:hover {
     background-color: #C4C4C4;
   }
+  font-size: 25pt;
 `;
 
 const BasicButton = ({ children }) => (

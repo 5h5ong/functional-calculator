@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import BasicInput from './components/BasicInput';
-import CalculatorButtons from './components/CalculatorButtons';
+import CalculatorForm from './components/CalculatorForm';
 
 const Container = styled.div`
   display: flex;
@@ -15,7 +15,7 @@ function App() {
   return (
     <Container>
       <BasicInput outcome={outcome} />
-      <CalculatorButtons />
+      <CalculatorForm />
     </Container>
   );
 }
