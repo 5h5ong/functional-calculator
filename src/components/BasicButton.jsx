@@ -15,8 +15,8 @@ const Button = styled(DefaultButtonStyle)`
   font-size: 25pt;
 `;
 
-const BasicButton = ({ children }) => (
-  <Button type="button">
+const BasicButton = ({ children, onClick }) => (
+  <Button type="button" onClick={onClick}>
     {children}
   </Button>
 );

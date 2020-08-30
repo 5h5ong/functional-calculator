@@ -10,9 +10,9 @@ const Container = styled.div`
   flex-direction: row;
 `;
 
-const CalculatorForm = () => (
+const CalculatorForm = ({ setOutcome }) => (
   <Container>
-    <CalculatorButtons />
+    <CalculatorButtons setOutcome={setOutcome} />
     <ActionButtons />
   </Container>
 );

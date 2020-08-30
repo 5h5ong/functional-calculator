@@ -10,12 +10,12 @@ const Container = styled.div`
 `;
 
 function App() {
-  const [outcome, setOutcome] = useState(0);
+  const [outcome, setOutcome] = useState('0');
 
   return (
     <Container>
       <BasicInput outcome={outcome} />
-      <CalculatorForm />
+      <CalculatorForm setOutcome={setOutcome} />
     </Container>
   );
 }

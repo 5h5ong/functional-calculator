@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import BasicButton from './BasicButton';
+import { spliceNumber } from '../libs/calculation';
 
 const Wrapper = styled.div`
   display: grid; 
@@ -9,19 +10,25 @@ const Wrapper = styled.div`
   grid-template-columns: repeat(3, 1fr);
 `;
 
-const CalculatorButtons = () => (
-  <Wrapper>
-    <BasicButton>0</BasicButton>
-    <BasicButton>1</BasicButton>
-    <BasicButton>2</BasicButton>
-    <BasicButton>3</BasicButton>
-    <BasicButton>4</BasicButton>
-    <BasicButton>5</BasicButton>
-    <BasicButton>6</BasicButton>
-    <BasicButton>7</BasicButton>
-    <BasicButton>8</BasicButton>
-    <BasicButton>9</BasicButton>
-  </Wrapper>
-);
+const CalculatorButtons = ({ setOutcome }) => {
+  const onClick = (number) => {
+    setOutcome((n) => spliceNumber(n, number));
+  };
+
+  return (
+    <Wrapper>
+      <BasicButton onClick={() => onClick(0)}>0</BasicButton>
+      <BasicButton onClick={() => onClick(1)}>1</BasicButton>
+      <BasicButton onClick={() => onClick(2)}>2</BasicButton>
+      <BasicButton onClick={() => onClick(3)}>3</BasicButton>
+      <BasicButton onClick={() => onClick(4)}>4</BasicButton>
+      <BasicButton onClick={() => onClick(5)}>5</BasicButton>
+      <BasicButton onClick={() => onClick(6)}>6</BasicButton>
+      <BasicButton onClick={() => onClick(7)}>7</BasicButton>
+      <BasicButton onClick={() => onClick(8)}>8</BasicButton>
+      <BasicButton onClick={() => onClick(9)}>9</BasicButton>
+    </Wrapper>
+  );
+};
 
 export default CalculatorButtons;
