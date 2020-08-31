@@ -14,9 +14,13 @@ const CalculatorButtons = ({ setOutcome }) => {
   const onClick = (number) => {
     setOutcome((n) => spliceNumber(n, number));
   };
+  const resetOutcome = () => {
+    setOutcome('0');
+  };
 
   return (
     <Wrapper>
+      <BasicButton onClick={() => resetOutcome()}>AC</BasicButton>
       <BasicButton onClick={() => onClick(0)}>0</BasicButton>
       <BasicButton onClick={() => onClick(1)}>1</BasicButton>
       <BasicButton onClick={() => onClick(2)}>2</BasicButton>
