@@ -4,20 +4,22 @@ import PlusButton from './PlusButton';
 import SubtractButton from './SubtractButton';
 import MultiplyButton from './MultiplyButton';
 import DivisionButton from './DivisionButton';
+import ResultButton from './ResultButton';
 
 const Container = styled.div`
   display: grid;
   height: 100%;
   width: 300px;
-  grid-template-rows: repeat(4, 1fr) 
+  grid-template-rows: repeat(5, 1fr); 
 `;
 
-const ActionButtons = () => (
+const ActionButtons = ({ changeProcessState }) => (
   <Container>
-    <PlusButton />
+    <PlusButton changeProcessState={changeProcessState} />
     <SubtractButton />
     <MultiplyButton />
     <DivisionButton />
+    <ResultButton />
   </Container>
 );
 

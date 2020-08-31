@@ -11,8 +11,8 @@ const Button = styled(DefaultButtonStyle)`
   font-size: 25pt;
 `;
 
-const SpecialButton = ({ children }) => (
-  <Button type="button">
+const SpecialButton = ({ children, onClick }) => (
+  <Button type="button" onClick={onClick}>
     {children}
   </Button>
 );
