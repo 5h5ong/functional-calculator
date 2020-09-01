@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import BasicInput from './components/BasicInput';
 import CalculatorForm from './components/CalculatorForm';
+import { calculate } from './libs/calculation';
 
 const Container = styled.div`
   display: flex;
@@ -21,27 +22,31 @@ function App() {
   };
   const changeProcessState = (toBeChange) => {
     if (temp !== 0) {
-      if (processState === 'plus') {
-        setOutcome((v) => Number(v) + temp);
-        setTemp(0);
-      } else if (processState === 'subtract') {
-        setOutcome((v) => Number(v) - temp);
-      } else if (processState === 'multiply') {
-        setOutcome((v) => Number(v) * temp);
-      } else if (processState === 'division') {
-        setOutcome((v) => Number(v) / temp);
-      }
+      const result = calculate(processState, temp, Number(outcome));
+      setOutcome(result);
+      setTemp(0);
     } else {
       setProcessState(toBeChange);
       setTemp(Number(outcome));
       setOutcome('0');
     }
   };
+  const calculateResult = () => {
+    if (temp !== 0) {
+      setOutcome(calculate(processState, temp, Number(outcome)));
+      setTemp(0);
+    }
+  };
 
   return (
     <Container>
       <BasicInput outcome={outcome} />
-      <CalculatorForm changeProcessState={changeProcessState} setOutcome={setOutcome} resetCalculator={resetCalculator} />
+      <CalculatorForm
+        changeProcessState={changeProcessState}
+        setOutcome={setOutcome}
+        resetCalculator={resetCalculator}
+        calculateResult={calculateResult}
+      />
     </Container>
   );
 }

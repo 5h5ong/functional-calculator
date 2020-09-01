@@ -13,13 +13,13 @@ const Container = styled.div`
   grid-template-rows: repeat(5, 1fr); 
 `;
 
-const ActionButtons = ({ changeProcessState }) => (
+const ActionButtons = ({ changeProcessState, calculateResult }) => (
   <Container>
     <PlusButton changeProcessState={changeProcessState} />
     <SubtractButton changeProcessState={changeProcessState} />
     <MultiplyButton changeProcessState={changeProcessState} />
     <DivisionButton changeProcessState={changeProcessState} />
-    <ResultButton changeProcessState={changeProcessState} />
+    <ResultButton onClick={() => calculateResult()} />
   </Container>
 );
 
