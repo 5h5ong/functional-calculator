@@ -1,8 +1,8 @@
 import React from 'react';
 import SpecialButton from './SpecialButton';
 
-const MultiplyButton = () => (
-  <SpecialButton>
+const MultiplyButton = ({ changeProcessState }) => (
+  <SpecialButton onClick={() => changeProcessState('multiply')}>
     *
   </SpecialButton>
 );

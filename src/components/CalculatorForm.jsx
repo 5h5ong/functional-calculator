@@ -10,9 +10,9 @@ const Container = styled.div`
   flex-direction: row;
 `;
 
-const CalculatorForm = ({ setOutcome, changeProcessState }) => (
+const CalculatorForm = ({ setOutcome, changeProcessState, resetCalculator }) => (
   <Container>
-    <CalculatorButtons setOutcome={setOutcome} />
+    <CalculatorButtons setOutcome={setOutcome} resetCalculator={resetCalculator} />
     <ActionButtons changeProcessState={changeProcessState} />
   </Container>
 );

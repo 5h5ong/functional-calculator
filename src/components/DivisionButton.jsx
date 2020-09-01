@@ -1,8 +1,8 @@
 import React from 'react';
 import SpecialButton from './SpecialButton';
 
-const DivisionButton = () => (
-  <SpecialButton>
+const DivisionButton = ({ changeProcessState }) => (
+  <SpecialButton onClick={() => changeProcessState('division')}>
     /
   </SpecialButton>
 );

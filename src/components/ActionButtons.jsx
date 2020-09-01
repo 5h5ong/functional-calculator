@@ -16,10 +16,10 @@ const Container = styled.div`
 const ActionButtons = ({ changeProcessState }) => (
   <Container>
     <PlusButton changeProcessState={changeProcessState} />
-    <SubtractButton />
-    <MultiplyButton />
-    <DivisionButton />
-    <ResultButton />
+    <SubtractButton changeProcessState={changeProcessState} />
+    <MultiplyButton changeProcessState={changeProcessState} />
+    <DivisionButton changeProcessState={changeProcessState} />
+    <ResultButton changeProcessState={changeProcessState} />
   </Container>
 );
 

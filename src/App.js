@@ -14,11 +14,22 @@ function App() {
   const [temp, setTemp] = useState(0);
   const [processState, setProcessState] = useState('');
 
+  const resetCalculator = () => {
+    setTemp(0);
+    setOutcome('0');
+    setProcessState('');
+  };
   const changeProcessState = (toBeChange) => {
     if (temp !== 0) {
       if (processState === 'plus') {
         setOutcome((v) => Number(v) + temp);
         setTemp(0);
+      } else if (processState === 'subtract') {
+        setOutcome((v) => Number(v) - temp);
+      } else if (processState === 'multiply') {
+        setOutcome((v) => Number(v) * temp);
+      } else if (processState === 'division') {
+        setOutcome((v) => Number(v) / temp);
       }
     } else {
       setProcessState(toBeChange);
@@ -30,7 +41,7 @@ function App() {
   return (
     <Container>
       <BasicInput outcome={outcome} />
-      <CalculatorForm changeProcessState={changeProcessState} setOutcome={setOutcome} />
+      <CalculatorForm changeProcessState={changeProcessState} setOutcome={setOutcome} resetCalculator={resetCalculator} />
     </Container>
   );
 }
