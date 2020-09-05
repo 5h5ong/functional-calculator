@@ -10,18 +10,23 @@ export const spliceNumber = (string, number) => {
   return `${number}`;
 };
 
+const plus = (first, second) => first + second;
+const subtract = (first, second) => first - second;
+const multiply = (first, second) => first * second;
+const division = (first, second) => first / second;
+
 /**
  * 계산
  */
-export const calculate = curry((state, first, second) => {
+export const calculate = curry((state) => {
   if (state === 'plus') {
-    return first + second;
+    return plus;
   } if (state === 'subtract') {
-    return first - second;
+    return subtract;
   } if (state === 'multiply') {
-    return first * second;
+    return multiply;
   } if (state === 'division') {
-    return first / second;
+    return division;
   }
   return false;
 });

@@ -22,8 +22,8 @@ function App() {
   };
   const changeProcessState = (toBeChange) => {
     if (temp !== 0) {
-      const result = calculate(processState, temp, Number(outcome));
-      setOutcome(result);
+      const result = calculate(processState);
+      setOutcome(result(temp, Number(outcome)));
       setTemp(0);
     } else {
       setProcessState(toBeChange);
@@ -33,7 +33,7 @@ function App() {
   };
   const calculateResult = () => {
     if (temp !== 0) {
-      setOutcome(calculate(processState, temp, Number(outcome)));
+      setOutcome(calculate(processState)(temp, Number(outcome)));
       setTemp(0);
     }
   };
